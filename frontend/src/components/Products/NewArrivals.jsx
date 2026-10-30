@@ -147,18 +147,22 @@ const NewArrivals = () => {
                 <button 
                     onClick={() => scroll("left")}
                     disabled={!canScrollLeft}
-                    className={
-                        `p-2 rounded border ${canScrollLeft ? "bg-white text-black" : "bg-gray-200 text-gray-400 cursor-not-allowed"}`
-                    }
+                    className={`p-2 rounded border ${
+                        canScrollLeft 
+                            ? "bg-white text-black" 
+                            : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                    }`}
                 >
                     <FiChevronLeft className="text-2xl" />
                 </button>
                 <button 
                     onClick={() => scroll("right")}
                     disabled={!canScrollRight}
-                    className={
-                        `p-2 rounded border ${canScrollRight ? "bg-white text-black" : "bg-gray-200 text-gray-400 cursor-not-allowed"}`
-                    }
+                    className={`p-2 rounded border ${
+                            canScrollRight 
+                                ? "bg-white text-black" 
+                                : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                    }`}
                 >
                     <FiChevronRight className="text-2xl" />
                 </button>
@@ -169,6 +173,7 @@ const NewArrivals = () => {
         <div 
             ref={scrollRef} 
             className="container mx-auto overflow-x-scroll flex space-x-6 relative"
+            onMouseDown={handleMouseDown}
         >
             {NewArrivals.map((product) => (
                 <div 
@@ -190,7 +195,6 @@ const NewArrivals = () => {
                         </Link>
                     </div>
                 </div>
-                
             ))}
         </div>
     </section>
