@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import { Toaster } from "sonner";
 
 const App = () => {
+
   return (
     <BrowserRouter>
     <Toaster position="top-right" />
